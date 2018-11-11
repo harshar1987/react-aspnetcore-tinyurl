@@ -19,7 +19,7 @@ namespace UrlShortnerApi.Controllers
         private readonly IShortUrlService _shortUrlService;
         private readonly ILogger _logger;
 
-        public ShortUrlController(IShortUrlService shortUrlService, ILogger<TodoController> logger)
+        public ShortUrlController(IShortUrlService shortUrlService, ILogger<ShortUrlController> logger)
         {
             _shortUrlService = shortUrlService;
             _logger = logger;
