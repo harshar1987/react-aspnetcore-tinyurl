@@ -1,0 +1,16 @@
+D:\Tutorials\.NET Links\CloudCherry.UrlShortner\server\UrlShortnerApi\bin\Debug\netcoreapp2.1\UrlShortnerApi.deps.json
+D:\Tutorials\.NET Links\CloudCherry.UrlShortner\server\UrlShortnerApi\bin\Debug\netcoreapp2.1\UrlShortnerApi.runtimeconfig.json
+D:\Tutorials\.NET Links\CloudCherry.UrlShortner\server\UrlShortnerApi\bin\Debug\netcoreapp2.1\UrlShortnerApi.runtimeconfig.dev.json
+D:\Tutorials\.NET Links\CloudCherry.UrlShortner\server\UrlShortnerApi\bin\Debug\netcoreapp2.1\UrlShortnerApi.dll
+D:\Tutorials\.NET Links\CloudCherry.UrlShortner\server\UrlShortnerApi\bin\Debug\netcoreapp2.1\UrlShortnerApi.pdb
+D:\Tutorials\.NET Links\CloudCherry.UrlShortner\server\UrlShortnerApi\obj\Debug\netcoreapp2.1\UrlShortnerApi.csprojAssemblyReference.cache
+D:\Tutorials\.NET Links\CloudCherry.UrlShortner\server\UrlShortnerApi\obj\Debug\netcoreapp2.1\UrlShortnerApi.csproj.CoreCompileInputs.cache
+D:\Tutorials\.NET Links\CloudCherry.UrlShortner\server\UrlShortnerApi\obj\Debug\netcoreapp2.1\UrlShortnerApi.RazorAssemblyInfo.cache
+D:\Tutorials\.NET Links\CloudCherry.UrlShortner\server\UrlShortnerApi\obj\Debug\netcoreapp2.1\UrlShortnerApi.RazorAssemblyInfo.cs
+D:\Tutorials\.NET Links\CloudCherry.UrlShortner\server\UrlShortnerApi\obj\Debug\netcoreapp2.1\UrlShortnerApi.AssemblyInfoInputs.cache
+D:\Tutorials\.NET Links\CloudCherry.UrlShortner\server\UrlShortnerApi\obj\Debug\netcoreapp2.1\UrlShortnerApi.AssemblyInfo.cs
+D:\Tutorials\.NET Links\CloudCherry.UrlShortner\server\UrlShortnerApi\obj\Debug\netcoreapp2.1\UrlShortnerApi.RazorTargetAssemblyInfo.cache
+D:\Tutorials\.NET Links\CloudCherry.UrlShortner\server\UrlShortnerApi\obj\Debug\netcoreapp2.1\UrlShortnerApi.dll
+D:\Tutorials\.NET Links\CloudCherry.UrlShortner\server\UrlShortnerApi\obj\Debug\netcoreapp2.1\UrlShortnerApi.pdb
+D:\Tutorials\.NET Links\CloudCherry.UrlShortner\server\UrlShortnerApi\bin\Debug\netcoreapp2.1\Microsoft.Azure.Documents.ServiceInterop.dll
+D:\Tutorials\.NET Links\CloudCherry.UrlShortner\server\UrlShortnerApi\bin\Debug\netcoreapp2.1\DocumentDB.Spatial.Sql.dll
