@@ -34,6 +34,9 @@ namespace UrlShortnerApi
             services.AddScoped<IShortUrlService, ShortUrlService>();
             services.AddScoped<ISystemClock, SystemClock>();
             services.AddSingleton<IDocumentDBRepository<ShortUrl>>(new DocumentDBRepository<ShortUrl>("UrlShortner", "ShortUrls"));
+            services.AddCors(options => options.AddPolicy("UrlShortnerPolicy", builder => {
+                builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+            }));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddSwaggerGen(swagger =>
             {

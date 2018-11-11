@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.Documents;
 using Microsoft.Extensions.Logging;
@@ -14,6 +15,7 @@ namespace UrlShortnerApi.Controllers
 
     [Route("api/[controller]")]
     [ApiController]
+    [EnableCors("UrlShortnerPolicy")]
     public class ShortUrlController : ControllerBase
     {
         private readonly IShortUrlService _shortUrlService;
