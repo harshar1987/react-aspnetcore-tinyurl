@@ -27,6 +27,7 @@ namespace UrlShortnerApi.Controllers
             _logger = logger;
         }
 
+
         [HttpGet("{shortUrl}", Name = "GetOriginalUrlAsync")]
         public async Task<IActionResult> GetOriginalUrlAsync(string shortUrl)
         {
@@ -46,7 +47,7 @@ namespace UrlShortnerApi.Controllers
             try
             {
                 var shortCode = await _shortUrlService.CreateShortUrl(originalUrl);
-                return Content($"{HttpContext.Request.Host}/{shortCode}");
+                return Content(shortCode);
             }
             catch (DocumentClientException ex)
             {
