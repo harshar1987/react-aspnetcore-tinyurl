@@ -27,7 +27,7 @@ namespace UrlShortnerApi.Controllers
             _logger = logger;
         }
 
-
+        
         [HttpGet("{shortUrl}", Name = "GetOriginalUrlAsync")]
         public async Task<IActionResult> GetOriginalUrlAsync(string shortUrl)
         {
@@ -39,7 +39,7 @@ namespace UrlShortnerApi.Controllers
             }
 
             return Ok(originalUrl);
-        }
+        }}
 
         [HttpPost]
         public async Task<IActionResult> CreateShortUrlAsync([FromBody] string originalUrl)

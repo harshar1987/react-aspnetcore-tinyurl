@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.Azure.Documents;
 using Microsoft.Azure.Documents.Client;
 using Microsoft.Azure.Documents.Linq;
+using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 using UrlShortnerApi.Models;
 
@@ -13,23 +14,29 @@ namespace UrlShortnerApi.DAL
 {
     public class DocumentDBRepository<T> : IDocumentDBRepository<T> where T : class
     {
-        private const string Endpoint = "https://cloudcherry-url-shortner.documents.azure.com:443/";
-        private const string Key = "pCyBxEyRAHDl2IsXkgCVAYkqxXRBXpgPJyMktm6NGK7VfmNC8r6o7djjHWUT8HfU9Tz4KlXVpHzZWpHdAfzpcg==";
+        private readonly string _endPoint = "";
+        private readonly string _key = "";
         private readonly string _databaseId;
         private readonly string _collectionId;
         private readonly DocumentClient _client;
 
-        public DocumentDBRepository(string database, string collection)
+        
+
+        public DocumentDBRepository(IConfiguration configuration, string database, string collection)
         {
             _databaseId = database;
             _collectionId = collection;
-            _client = new DocumentClient(new Uri(Endpoint), Key);
+
+            _endPoint = configuration["API:EndPoint"];
+            _key = configuration["API:Secret"];
+            _client = new DocumentClient(new Uri(_endPoint), _key);
 
             Initialize();
         }
 
         private void Initialize()
         {
+            
             CreateDatabaseIfNotExistsAsync().Wait();
             CreateCollectionIfNotExistsAsync().Wait();
         }

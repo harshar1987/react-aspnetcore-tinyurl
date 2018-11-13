@@ -21,9 +21,16 @@ namespace UrlShortnerApi
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public Startup(IHostingEnvironment env)
         {
-            Configuration = configuration;
+            var builder = new ConfigurationBuilder()
+            .SetBasePath(env.ContentRootPath)
+            .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+             .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
+            .AddEnvironmentVariables();
+
+            Configuration = builder.Build();
+
         }
 
         public IConfiguration Configuration { get; }
@@ -33,8 +40,9 @@ namespace UrlShortnerApi
         {
             services.AddScoped<IShortUrlService, ShortUrlService>();
             services.AddScoped<ISystemClock, SystemClock>();
-            services.AddSingleton<IDocumentDBRepository<ShortUrl>>(new DocumentDBRepository<ShortUrl>("UrlShortner", "ShortUrls"));
-            services.AddCors(options => options.AddPolicy("UrlShortnerPolicy", builder => {
+            services.AddSingleton<IDocumentDBRepository<ShortUrl>>(new DocumentDBRepository<ShortUrl>(Configuration,"UrlShortner", "ShortUrls"));
+            services.AddCors(options => options.AddPolicy("UrlShortnerPolicy", builder =>
+            {
                 builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
             }));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
@@ -72,12 +80,13 @@ namespace UrlShortnerApi
                 sw.RoutePrefix = string.Empty;
             });
             //app.UseMvc();
+
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
                     name: "shorturl",
                     template: "{*hash}",
-                    defaults: new { controller = "shorturl", Action="GetOriginalUrlAsync"});
+                    defaults: new { controller = "shorturl", Action = "GetOriginalUrlAsync" });
             });
         }
     }
