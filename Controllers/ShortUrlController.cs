@@ -39,7 +39,7 @@ namespace UrlShortnerApi.Controllers
             }
 
             return Ok(originalUrl);
-        }}
+        }
 
         [HttpPost]
         public async Task<IActionResult> CreateShortUrlAsync([FromBody] string originalUrl)
